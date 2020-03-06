@@ -1,6 +1,6 @@
 #include "lcd.h"
 
-
+void SystemInit() {}
 
 
 int main(){

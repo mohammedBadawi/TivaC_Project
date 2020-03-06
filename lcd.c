@@ -1,7 +1,7 @@
 #include "lcd.h"
 
 
-void SystemInit(){}
+
 void Control_Pins_Init(void){ 
 SYSCTL_RCGCGPIO_R|=(1<<CONTROLPORT);																	//ENABLE CLK FOR PORTA 
 while((SYSCTL_PRGPIO_R&(1<<CONTROLPORT))==0){} 															//WAIT UNTIL CLK IS READY 
