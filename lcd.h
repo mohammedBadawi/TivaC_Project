@@ -2,10 +2,16 @@
 #define LCD_H
 #include "stdint.h"
 #include "std_types.h"
-#include "C:\Keil\TExaSware\tm4c123gh6pm.h"
-
+#include "tm4c123gh6pm.h"
+/******************************************************************************/
+#define PORTA							0
+#define PORTB							1
+#define PORTC							2
+#define PORTD							3
+#define PORTE							4
+#define PORTF							5
 /*******************************DATA PORT MACROS*******************************/
-
+#define DATAPORT						PORTB
 #define DATAPORT_DIR_R 					GPIO_PORTB_DIR_R
 #define DATAPORT_DEN_R 					GPIO_PORTB_DEN_R
 #define DATAPORT_AMSEL_R 				GPIO_PORTB_AMSEL_R
@@ -14,7 +20,7 @@
 #define DATAPORT_AFSEL_R				GPIO_PORTB_AFSEL_R
 #define DATAPORT_DATA_R				    GPIO_PORTB_DATA_R
 /*******************************CONTROL PORT MACROS****************************/
-
+#define CONTROLPORT						PORTA
 #define CONTROLPORT_DIR_R 	  		    GPIO_PORTA_DIR_R
 #define CONTROLPORT_DEN_R 				GPIO_PORTA_DEN_R
 #define CONTROLPORT_AMSEL_R 			GPIO_PORTA_AMSEL_R
@@ -25,8 +31,6 @@
 #define RS 								2
 #define RW							    3
 #define ENB 							4
-
-
 /********************************LCD Commands**********************************/
 #define CLEAR_COMMAND 0x01
 #define TWO_LINE_LCD_Eight_BIT_MODE 0x38
@@ -44,4 +48,5 @@ void Display_String(const char* ptr2string);
 void Set_Position(uint8 row , uint8 col);
 void Delete_Last_Char(void);
 void LCD_Init(void);
+void Clear_Screen(void);
 #endif
