@@ -1,5 +1,5 @@
 #include "UART.h"
-void SystemInit(){}
+
 	
 void UART_Init(uint8 UARTX,uint8 length,uint16 baud_rate){
 	uint16 clk_div=(int)(SYS_CLK/(baud_rate*16));		float32 fraction=(float)(SYS_CLK/(baud_rate*16))-clk_div;
@@ -85,7 +85,3 @@ void UART_Receive_String(uint8 *Str,uint8 UARTX)
 	}
 	Str[i] = '\0';
 }
-
-
-
-	
