@@ -4,7 +4,8 @@
 #include "stdint.h"
 #include "tm4c123gh6pm.h"
 #include "std_types.h"
-#define SYS_CLK		8000000
+#include "TM4C123.h"
+#define SYS_CLK		16000000
 
 
 void UART_Init(uint8 UARTX,uint8 length,uint16 baud_rate);
